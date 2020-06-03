@@ -7,28 +7,30 @@
 </head>
 <body>
 
-<div class="container mt-4">
-	<table class="table">
-		<thead></thead>
-		<tr>
-			<th>ID</th>
-			<th>NOMBRES</th>
-			<th>TELÉFONO</th>
-			<th>ACCIONES</th>
-		</tr>
-			<tbody>
-				<tr th:each="persona:${personas}">
-					<td th:text="${persona.id}"></td>
-					<td th:text="${persona.name}"></td>
-					<td th:text="${persona.telefono}"></td>
-					<td>
-					<a class="btn btn-warning">Editar</a>
-					<a class="btn btn-danger">Eliminar</a>
-					</td>
-				</tr>
-			</tbody>
-	</table>
-</div>
+		<div class="container mt-4">
+			<a th:href="@{/new}" class="btn btn-primary">Nuevo</a>
+			<br><br>
+				<table class="table">
+					<thead></thead>
+					<tr>
+						<th>ID</th>
+						<th>NOMBRES</th>
+						<th>TELEFONO</th>
+						<th>ACCIONES</th>
+					</tr>
+						<tbody>
+							<tr th:each="persona:${personas}">
+								<td th:text="${persona.id}"></td>
+								<td th:text="${persona.name}"></td>
+								<td th:text="${persona.telefono}"></td>
+								<td>
+								<a class="btn btn-warning">Editar</a>
+								<a class="btn btn-danger">Eliminar</a>
+								</td>
+							</tr>
+						</tbody>
+				</table>
+		</div>
 
 </body>
 </html>
